@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../images/gob-franklin.jpg);
+    background-size: 130%;
+    background-position-y: top -300px;
+}
+
+/* HEADER STYLES */
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    border: solid 2px white;
+    width: 50%;
+    /* margin-left: 150px; */
+}
+
+#quiz-box {
+    background-color: darkgrey;
+    opacity: 0.75;
+}
+
+h4 {
+    color: #bb0a1e;
+    text-align: center;
+    padding: 5px;
+}
+
+#bootstrap-override .button {
+    color: white;
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+    color: #bb0a1e;
+    padding-left: 3px;
+    /* font-size: 13px; */
+    line-height: 2em;
+}
+
+.far {
+    margin-right: 10px;
+}
+
+button {
+    width: 150px;
+}
+
+.question {
+    display: hidden;
+}
+

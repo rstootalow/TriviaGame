@@ -6,11 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- BOOTSTRAP LINK -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="">
-    <title>Document</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous">
+    </script>
+    <title>Trivia Game</title>
 </head>
-<body>
+
+<body id="bootstrap-override">
+    <header>
+        <h1>Arrested Development Trivia Game!</h1>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div id="quiz-box" class="col-12">
+                <h4 class="instructions">Instructions:</h4>
+                <ul>
+                    <li><i class="far fa-caret-square-right"></i>Click the button below to start the game</li>
+                    <li><i class="far fa-caret-square-right"></i>You will have 10 seconds to answer each question</li>
+                    <li><i class="far fa-caret-square-right"></i>If CORRECT, you will be notified of your correct answer and will be brought to the next question</li>
+                    <li><i class="far fa-caret-square-right"></i>If INCORRECT, you will be notified of your incorrect answer, shown the correct answer and brought to the next question</li>
+                    <li><i class="far fa-caret-square-right"></i>If TIME EXPIRES, you will be notified and will be shown the correct answer.</li>
+                    <li><i class="far fa-caret-square-right"></i>At the end of the game, you will be shown the number of correct and incorrect guess, and will have an option to replay the game</li>
+                </ul>
+                <div class="button center-block">
+                    <button type="button" id="button-start" class="btn btn-danger">Start Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JAVASCRIPT LINK -->
     <script type="text/javascript" src="assets/js/app.js">
     </script>
