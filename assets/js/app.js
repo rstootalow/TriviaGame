@@ -6,70 +6,79 @@ var questions = [
     {
         question: "Who is Ann Veal?",
         answerChoices: ["Her? What is she funny or something?", "Michael's sister", "Bluth family rival", "Banana stand employee"],
-        answer: answerChoices[0] 
+        answer: 0
     },
     {
         question: "What is always in the banana stand?",
         answerChoices: ["Loose seals", "money", "ice cream sandwiches", "illusions"],
-        answer = answerChoices[1];
+        answer: 1
     },
     {
         question: "Who is the Bluth family attorney?",
         answerChoices: ["Maggie Lizer", "Kitty", "Lucille 2", "Barry Zuckerkorn"],
-        answer: answerChoices[3];
+        answer: 3
     },
     {
         question: "What is the Bluth vehicle of choice?",
         answerChoices: ["Staircar", "Mercedes", "Volvo", "Limo"],
-        answer: answerChoices[0];
-    }
+        answer: 0
+    },
     {
         question: "What does Gob perform?",
         answerChoices: ["Tricks", "Illusions", "Miracles", "Favors"],
-        answer: answerChoices[1];
+        answer: 1
     }
 ]
 
 // GLOBAL VARIABLES
-var userGuess;
-var correctAnswer;
-var incorrectAnswer;
-var timer = 15;
+var userGuess = ""
+var correctAnswer; // variable to track # of correct guesses
+var incorrectAnswer; // variable to track # of incorrect guesses
+var noAnswer; // variable to store # of guess user ran out of time on
+var clock = 15; // timer to keep track of time 
 var running = false; // sets default status of timer to !running
 var intervalId;
+var questionCount = questions.length; // variable to hold number of questions to guess for 1 game
+var guess; // the choice the user clicks on
+var answerArr = []; // array to hold users answers
+var randomPick; // generate random question to select.
+var questionIndex; // 
+
 
 //* CLICK BUTTON TO START THE GAME
-$(document).ready(function() {
+function gameStart() {
     $("#button-start").click(function() {
-        $(".container").hide();
-    })  
-})
+        $("#quiz-box").hide();
+    })
+}
 
-//TIMER FUNCTION
+// TIMER FUNCTION
 function timerStart() {
-    if(!running) {
-        intervalId = setInterval(decrement, 1000);
+    if (!running) {
+        intervalId = setInterval(runClock, 1000);
         running = true;
     }
 }
 
+// RUNNING CLOCK
+function runClock() {
+    $(".clock").html("<h3>Time Left: " + clock + "</h3>");
+    clock--;
 
+    if (clock === 0) {
+        noAnswer++;
+        stopGame();
+        $(".answers").html("<p>Sorry. Time is up! The correct answer was:</p>")
+    }
+}
 
-//* WHEN CLICKED, INSTRUCTIONS DIV IS HIDDEN
+// stop game function
+function stopGame() {
+    running = false;
+    clearInterval(intervalId);
+}
 
-//* 1ST QUESTION POPULATES ON CLICK AS WELL
-
-// TIMER COUNTS DOWN FROM 10 AT START OF EACH QUESTIONS
-
-// IF USER CLICKS THE RIGHT ANSWER
-  // HIGHLIGHT THAT ANSWER AND ADD 1 TO THE CORRECT ANSWER ARRAY
-  // DISPLAY MESSAGE SAYING PLAYER GUESSED CORRECTLY
-
-// IF USER CLICKS WRONG ANSWER
-  // HIGHLIGHT THE CORRECT ANSWER
-  // DISPLAY MESSAGE SAYING PLAYER GOT ANSWER WRONG
-  // ADD 1 TO THE INCORRECT ANSWERS ARRAY
-
-  // WHEN QUESTION IS ANSWERED AND SCORE IS DETERMINED
-    // HIDE CURRENT QUESTION DISPLAY THE NEXT QUESTION
-    //REPEAT FUNCTIONS FOR DETERMINING SCORE
+    //CALL FUNCTION
+    gameStart();
+    timerStart();
+    runClock();
