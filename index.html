@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous">
     </script>
+    <!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
     <title>Trivia Game</title>
 </head>
 
@@ -36,12 +37,18 @@
                 </ul>
                 <div class="button center-block">
                     <button type="button" id="button-start" class="btn btn-danger">Start Game</button>
+                    <button type="button" id="button-reset" class="btn btn-danger">Reset Game</button>
                 </div>
             </div>
             <div class="game-container">
-                <div class="clock"></div>
-                <div class="questions"></div>
-                <div class="answers"></div>
+                <div id="clock"></div>
+                <div id="questions"></div>
+                <div id="user-answers">
+                    <!-- <button class="answer-1"></button>
+                    <button class="answer-2"></button>
+                    <button class="answer-3"></button>
+                    <button class="answer-4"></button> -->
+                </div>
             </div>
         </div>
     </div>
